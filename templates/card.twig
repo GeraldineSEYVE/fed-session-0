@@ -1,0 +1,37 @@
+
+<div class="card {{ card_category }}">
+    <article>
+        <!--  Optional CATEGORY component-->
+          <!--  Optional CATEGORY component-->
+        {% if category in category == true %}
+        {% include "templates/category.twig" with {
+            category: category,
+        }%}
+        {% endif %}
+        <div class="card_wrapper">
+            <!--  Optional FIGURE component-->
+            <!--  document et un élément <figcaption> pour définir une légende pour la photo:-->
+            {% if image %}
+                <figure class="figure">
+                    <img class="figure__card-image" src={{ image }} alt={{ image_title }}>
+                    <figcaption>{{ legende_image }}</figcaption>
+                </figure>
+            {% endif %}
+            <div class="card_contain">
+                <h3 class="card__title">
+                    <a class="card__link" href={{ card_link }}>{{ card_title }}</a>
+                </h3>
+                <!--map or loop-->
+                {# <div class="card__author">By {{ name_author }}</div> #}
+                {# {% set authors = {
+                authors: spotlight_section.items.authors
+                } %}
+                {{ authors|map(p => "#{p.name_author}")|join(', ') }} #}
+                {% for aut in name_author %}
+                    <div class="card_author">By {{ aut }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+
+</div>

@@ -1,0 +1,16 @@
+
+<!-- 3 Column asymetrical-->
+<div class="grid-50-25-25">
+{% for card in spotlight_section.items %}
+{% include "templates/card.twig" with {
+
+    image: card.image,
+    category: card.category,
+    card_title: card.title,
+    card_link: card.link,
+    name_author: card.authors
+}%}
+{% endfor %}
+</div>
+
+
