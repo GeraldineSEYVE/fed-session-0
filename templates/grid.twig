@@ -1,16 +1,26 @@
 
 <!-- 3 Column asymetrical-->
 <div class="grid-50-25-25">
-{% for card in spotlight_section.items %}
-{% include "templates/card.twig" with {
 
-    image: card.image,
-    category: card.category,
-    card_title: card.title,
-    card_link: card.link,
-    name_author: card.authors
-}%}
+{# {% if loop.first and card_large == true %}
+    {% include "templates/card_large.twig" with {
+        image: card_large.image,
+        card_title: card_large.title,
+        card_link: card_large.link,
+        name_author: card_large.authors
+    }%}
+
+    {% else %} #}
+{% for card in spotlight_section.items %}
+    {% include "templates/card.twig" with {
+        category: card.category,
+        image: card.image,
+        card_title: card.title,
+        card_link: card.link,
+        name_author: card.authors
+    }%}
 {% endfor %}
+{# {% endif %} #}
 </div>
 
 
