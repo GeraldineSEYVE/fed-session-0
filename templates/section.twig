@@ -1,24 +1,17 @@
-<section class="section">
-    <section class="section__grid">
-    {% include "templates/header.twig" with {
-        title: spotlight_section.title,
-        url: spotlight_section.see_all.url,
-        link_text: spotlight_section.see_all.link_text,
-    }%}
-    {% include "templates/grid.twig" with {
-    }%}
+{% block section %}
+    <section class="section">
+        {% include "templates/card_header.twig" with {
+            title: header_title,
+            url: header_url,
+            link_text: link_text
+        }%}
+        {% include "templates/grid.twig" with {
+            category: card_category,
+            image: card_image,
+            image_title: card_title,
+            card_link: card_url,
+            name_author: card_authors,
+            card_content: content
+        } %}
     </section>
-    <section class='section__grid--second'>
-    {% include "templates/header.twig" with {
-        title: recent_section.title,
-        url: recent_section.see_all.url,
-        link_text: recent_section.see_all.link_text,
-    }%}
-    {% include "templates/grid_second.twig" with {
-    }%}
-    {% include "templates/footer.twig" with {
-        url: recent_section.call_to_action.url,
-        link_text: recent_section.call_to_action.link_text
-    }%}
-    </section>
-</section>
+{% endblock %}

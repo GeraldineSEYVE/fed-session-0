@@ -1,9 +1,41 @@
 {% extends "templates/base.twig" %}
 {% block content %}
-<div class="container_section">
-  {% include "templates/section.twig" with {
-    
-  } %}
+  <div class="container_section">
+    {% embed "templates/section.twig" with {} %}
+      {% block section %}
+      {% include "templates/section.twig" with {
+          header_title: spotlight_section.title,
+          header_url: spotlight_section.see_all.url,
+          link_text:spotlight_section.see_all.link_text,
+          header_intro: spotlight_section.see_all.intro,
+
+          card_category: spotlight_section.items.category,
+          card_image:spotlight_section.items.image,
+          card_title: spotlight_section.items.title,
+          card_url: spotlight_section.items.url,
+          card_authors: spotlight_section.items.authors,
+          card_content: spotlight_section.items.content
+      } %}
+      {% endblock %}
+      {% block section_second %}
+        {% embed "templates/section_second.twig" with {
+          header_title: spotlight_section.title,
+          header_url: spotlight_section.see_all.url,
+          header_intro: spotlight_section.see_all.link_text,
+
+          card_category_second: recent_section.items.category,
+          card_image_second:recent_section.items.image,
+          card_title_second: recent_section.items.title,
+          card_url_second: recent_section.items.url,
+          card_authors_second: recent_section.items.authors,
+          card_content_second: recent_section.items.content,
+
+          url_footer: recent_section.call_to_action.title,
+          link_text_footer: recent_section.call_to_action.link_text
+        } %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
   </div>
-{% endblock content %}
+{% endblock%}
 

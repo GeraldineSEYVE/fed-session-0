@@ -22,14 +22,8 @@
                     <a class="card__link" href={{ card_link }}>{{ card_title }}</a>
                 </h3>
                 <!--map or loop-->
-                {# <div class="card__author">By {{ name_author }}</div> #}
-                {# {% set authors = {
-                authors: spotlight_section.items.authors
-                } %}
-                {{ authors|map(p => "#{p.name_author}")|join(', ') }} #}
-                {% for aut in name_author %}
-                    <div class="card_author">By {{ aut }}</div>
-                {% endfor %}
+                <div class="card__author">By {{name_author| join(', ')}}</div>
+                <p class="content">{{content}}</p>
             </div>
         </div>
     </article>

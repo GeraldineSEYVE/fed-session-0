@@ -1,12 +1,5 @@
-
 <div class="grid-4-col">
-{% for grid in recent_section.items %}
     {% include "templates/card.twig" with {
-        category: grid.category,
-        image: grid.image,
-        card_title: grid.title,
-        card_link: grid.url,
-        name_author: grid.authors
-    }%}
-{% endfor %}
+        
+        }%}
 </div>
