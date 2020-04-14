@@ -2,7 +2,6 @@
 <div class="card {{ card_category }}">
     <article>
         <!--  Optional CATEGORY component-->
-        <!--  Optional CATEGORY component-->
         {% if category in category == true %}
         {% include "templates/category.twig" with {
             category: category,
@@ -10,7 +9,6 @@
         {% endif %}
         <div class="card_wrapper">
             <!--  Optional FIGURE component-->
-            <!--  document et un élément <figcaption> pour définir une légende pour la photo:-->
             {% if image %}
                 <figure class="figure">
                     <img class="figure__card-image" src={{ image }} alt={{ image_title }}>
@@ -21,7 +19,7 @@
                 <h3 class="card__title">
                     <a class="card__link" href={{ card_link }}>{{ card_title }}</a>
                 </h3>
-                <!--map or loop-->
+                <!--map or loop or join-->
                 <div class="card__author">By {{name_author| join(', ')}}</div>
                 <p class="content">{{content}}</p>
             </div>
