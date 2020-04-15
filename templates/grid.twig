@@ -1,10 +1,7 @@
 <!-- 3 Column asymetrical-->
-<div class="grid-50-25-25">
-    {% if loop.first %}
-        {% include "templates/card_large.twig" with {
-        }%}
-        {% else %}
-        {% include "templates/card.twig" with {
-        }%}
-    {% endif %}
+
+<div class="grid {{ modifier_classes }}">
+{% if grid_items %}
+    <div class="grid__items">{{grid_items}}</div>
+{% endif %}
 </div>

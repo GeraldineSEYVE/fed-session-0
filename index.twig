@@ -1,41 +1,86 @@
 {% extends "templates/base.twig" %}
 {% block content %}
   <div class="container_section">
-    {% embed "templates/section.twig" with {} %}
-      {% block section %}
-      {% include "templates/section.twig" with {
-          header_title: spotlight_section.title,
-          header_url: spotlight_section.see_all.url,
-          link_text:spotlight_section.see_all.link_text,
-          header_intro: spotlight_section.see_all.intro,
 
-          card_category: spotlight_section.items.category,
-          card_image:spotlight_section.items.image,
-          card_title: spotlight_section.items.title,
-          card_url: spotlight_section.items.url,
-          card_authors: spotlight_section.items.authors,
-          card_content: spotlight_section.items.content
-      } %}
-      {% endblock %}
-      {% block section_second %}
-        {% embed "templates/section_second.twig" with {
-          header_title: spotlight_section.title,
-          header_url: spotlight_section.see_all.url,
-          header_intro: spotlight_section.see_all.link_text,
+    {% set cards %}
+      {% if loop.first %}
+      {% include "templates/card_large.twig" with {
+          image: spotlight_section.items.image,
+          image_title:"title image",
+          card_link: spotlight_section.items.url,
+          card_title_link: spotlight_section.items.title,
+          name_author:spotlight_section.items.authors,
+          content:spotlight_section.items.content
+      }%}
+      {% else %}
+      {% for item in spotlight_section.items %}
+        {% include "templates/card.twig" with {
+          category: item.category,
+          image: item.image,
+          image_title:"title image",
+          card_link: item.url,
+          card_title_link: item.title,
+          name_author:item.authors,
+          content:item.content
+        }%}
+      {% endfor %}
+      {% endif %}
+    {% endset %}
 
-          card_category_second: recent_section.items.category,
-          card_image_second:recent_section.items.image,
-          card_title_second: recent_section.items.title,
-          card_url_second: recent_section.items.url,
-          card_authors_second: recent_section.items.authors,
-          card_content_second: recent_section.items.content,
+  {% set cards__second %}
+      {% for item in recent_section.items %}
+        {% include "templates/card.twig" with {
+          category: item.category,
+          image: item.image,
+          image_title:"title image",
+          card_link: item.url,
+          card_title_link: item.title,
+          name_author:item.authors,
+          content:item.content
+        }%}
+      {% endfor %}
+    {% endset %}
+    {# {% embed "templates/section.twig" with {
+      section_title: 'Title',
+      section_link_url: 'http://google.com',
+      section_link_text: 'Link Text',
+      section_intro: 'Intro text'
+    }%} #}
 
-          url_footer: recent_section.call_to_action.title,
-          link_text_footer: recent_section.call_to_action.link_text
-        } %}
-        {% endembed %}
-      {% endblock %}
+    {# premier bloc section #}
+    {% embed "templates/section.twig" with {
+      section_title:spotlight_section.title,
+      section_link_url:spotlight_section.see_all.url,
+      section_link_text:spotlight_section.see_all.link.text
+    }%}
+    {% block section_content %}
+      {% include "templates/grid.twig" with {
+        modifier_classes: 'grid',
+        grid_items: cards
+        }%}
+    {% endblock %}
+    {% endembed %}
+
+  {# deuxieme bloc section #}
+    {% embed "templates/section_second.twig" with {
+      section_title:recent_section.title,
+      section_link_url:recent_section.see_all.url,
+      section_link_text:recent_section.see_all.link.text,
+      section_intro:recent_section.intro
+    }%}
+    {% block section_content %}
+    {% include "templates/grid_second.twig" with {
+      modifier_classes: 'grid--second',
+      grid_items: cards__second
+    }%}
+    {% endblock %}
+    {% block section_footer %}
+    {% include "templates/section_footer.twig" with {
+      footer_url:recent_section.call_to_action.url,
+      footer_link_text:recent_section.call_to_action.link_text
+      }%}
+    {% endblock %}
     {% endembed %}
   </div>
-{% endblock%}
+{% endblock  %}
 

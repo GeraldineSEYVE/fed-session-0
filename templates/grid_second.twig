@@ -1,5 +1,7 @@
-<div class="grid-4-col">
-    {% include "templates/card.twig" with {
-        
-        }%}
-</div>
+{% block section_content %}
+    <div class="grid {{ modifier_classes}} ">
+        {% if grid_items %}
+        <div class="grid__items">{{grid_items}}</div>
+        {% endif %}
+    </div>
+{% endblock %}

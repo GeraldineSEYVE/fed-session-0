@@ -1,23 +1,18 @@
-{% block section_second %}
-    <section class="section_second">
-            {% include "templates/card_header.twig" with {
-                title: header_title,
-                url: header_url,
-                intro: header_intro
-            }%}
+<section class="section">
+    <div class="l-constrain">
+        <header class="section__header">
+            <h2 class="section__title">{{ section_title }}</h2>
+            <a class="section-header__link" href="{{ section_link_url }}">{{ section_link_text }}</a>
+        </header>
+        {#Intro #}
+        {% if section_intro %}
+        <div class="section_intro">{{section_intro}}</div>
+        {% endif %}
 
-            {% include "templates/grid_second.twig" with {
-                category: card_category_second,
-                image: card_image_second,
-                image_title: card_title,
-                card_title :card_title_second,
-                card_link: card_url_second,
-                name_author: card_authors_second,
-                content: card_content_second
-            }%}
-            {% include "templates/card_footer.twig" with {
-            url:section_footer_url,
-            link_text:section_footer_link_text
-            }%}
-    </section>
-{% endblock %}
+        {#Grid #}
+        {% block section_content %}
+        {% endblock %}
+
+        {#Footer #}
+        {% block section_footer %}
+        {% endblock %}

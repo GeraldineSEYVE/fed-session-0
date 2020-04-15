@@ -1,17 +1,18 @@
-{% block section %}
-    <section class="section">
-        {% include "templates/card_header.twig" with {
-            title: header_title,
-            url: header_url,
-            link_text: link_text
-        }%}
-        {% include "templates/grid.twig" with {
-            category: card_category,
-            image: card_image,
-            image_title: card_title,
-            card_link: card_url,
-            name_author: card_authors,
-            content:card_content
-        } %}
-    </section>
-{% endblock %}
+<section class="section">
+    <div class="l-constrain">
+        <header class="section__header">
+            <h2 class="section__title">{{ section_title }}</h2>
+            <a class="section-header__link" href="{{ section_link_url }}">{{ section_link_text }}</a>
+        </header>
+
+        {# Intro #}
+        {% if section_intro %}
+            <div class="section__intro">{{ section_intro }}</div>
+        {% endif %}
+
+        {# Grid #}
+        {% block section_content %}
+            Section content will go here
+        {% endblock %}
+    </div>
+</section>
