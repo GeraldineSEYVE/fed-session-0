@@ -1,6 +1,6 @@
 
-<div class="card__wrapper">
-    <div class="card {{ card_category }}">
+<div class="card card__normal">
+    <div class="card{{ card_category }}">
         <article>
             <!--  Optional CATEGORY component-->
             {% if category in category == true %}
@@ -8,6 +8,7 @@
                 category: category,
             }%}
             {% endif %}
+            <div class="card__items">
                 <!--  Optional FIGURE component-->
                 {% if image %}
                     <figure class="figure">
@@ -21,8 +22,9 @@
                     </h3>
                     <!--map or loop or join-->
                     <div class="card__author">By {{name_author| join(', ')}}</div>
-                    <p class="content">{{content}}</p>
+                        <p class="content">{{content}}</p>
                 </div>
+            </div>
         </article>
     </div>
 </div>

@@ -1,6 +1,7 @@
 {% extends "templates/base.twig" %}
 {% block content %}
   <div class="container_section">
+{# First block card//#}
   {% set cards %}
     {% for item in spotlight_section.items %}
     {# variable loop created automaticcaly after a for loop #}
@@ -26,7 +27,8 @@
       {% endif %}
     {% endfor %}
   {% endset %}
-
+{# //First  block card#}
+{# Second  block card//#}
   {% set cards__second %}
       {% for item in recent_section.items %}
         {% include "templates/card.twig" with {
@@ -40,6 +42,8 @@
         }%}
       {% endfor %}
   {% endset %}
+{# //Second  block card #}
+
     {# {% embed "templates/section.twig" with {
       section_title: 'Title',
       section_link_url: 'http://google.com',
@@ -47,42 +51,43 @@
       section_intro: 'Intro text'
     }%} #}
 
-    {# premier bloc section #}
-    {% embed "templates/section.twig" with {
-      section_title:spotlight_section.title,
-      section_link_url:spotlight_section.see_all.url,
-      section_link_text:spotlight_section.see_all.link.text
+{# first bloc section //#}
+  {% embed "templates/section.twig" with {
+    section_title:spotlight_section.title,
+    section_link_url:spotlight_section.see_all.url,
+    section_link_text:spotlight_section.see_all.link.text,
+    modifier_classes: 'section'
     }%}
-    {% block section_content %}
-      {% include "templates/grid.twig" with {
-        modifier_classes: 'grid',
-        grid_items: cards
-        }%}
-    {% endblock %}
-    {% endembed %}
-
-  {# deuxieme bloc section #}
-    {% embed "templates/section_second.twig" with {
-      section_title:recent_section.title,
-      section_link_url:recent_section.see_all.url,
-      section_link_text:recent_section.see_all.link.text,
-      section_intro:recent_section.intro
-    }%}
-      {% block section_content %}
-      {% include "templates/grid_second.twig" with {
-        modifier_classes: 'grid--second',
-        grid_items: cards__second
+  {% block section_content %}
+    {% include "templates/grid.twig" with {
+      modifier_classes: 'grid',
+      grid_items: cards
       }%}
-      {% endblock %}
-
-      {% block section_footer %}
-          {% include "templates/button.twig" with {
-          button_url:recent_section.call_to_action.url,
-          button_text:recent_section.call_to_action.link_text
-          }%}
-      {% endblock %}
-    {% endembed %}
-  
+  {% endblock %}
+  {% endembed %}
+{# //first bloc section #}
+{# deuxieme bloc section// #}
+  {% embed "templates/section_second.twig" with {
+    section_title:recent_section.title,
+    section_link_url:recent_section.see_all.url,
+    section_link_text:recent_section.see_all.link.text,
+    section_intro:recent_section.intro,
+    modifier_classes: 'section--second'
+    }%}
+  {% block section_content %}
+    {% include "templates/grid_second.twig" with {
+      modifier_classes: 'grid--second',
+      grid_items: cards__second
+      }%}
+  {% endblock %}
+  {% block section_footer %}
+    {% include "templates/button.twig" with {
+      button_url:recent_section.call_to_action.url,
+      button_text:recent_section.call_to_action.link_text
+      }%}
+  {% endblock %}
+  {% endembed %}
+{# //deuxieme bloc section #}
   </div>
 {% endblock  %}
 

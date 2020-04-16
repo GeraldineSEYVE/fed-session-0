@@ -1,6 +1,7 @@
 
 <div class="card card__large">
     <article>
+        <div class="card__items">
             {% if image %}
                 <figure class="figure">
                     <img class="figure__card-image" src={{ image }} alt={{ image_title }}>
@@ -13,7 +14,7 @@
                 </h3>
                 <div class="card__author">By {{ name_author |join(', ', ' and ') }}</div>
                 <p class="content">{{content}}</p>
-            </div>
+        </div>
+        </div>
     </article>
-
 </div>

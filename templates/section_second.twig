@@ -1,4 +1,4 @@
-<section class="section_second">
+<section class="section {{ modifier_classes }}">
     <div class="l-constrain">
         <header class="section__header">
             <h2 class="section__title">{{ section_title }}</h2>
@@ -6,17 +6,17 @@
         </header>
         {#Intro #}
         {% if section_intro %}
-        <div class="section_intro">{{section_intro}}</div>
+        <div class="section__intro">{{section_intro}}</div>
         {% endif %}
-
         {#Grid #}
-        <div class="grid_second_wrapper">
+        <div class="section__grid_second">
         {% block section_content %}
         {% endblock %}
         </div>
-
         {#Footer #}
-        <div class="section_footer">
+        <div class="section__footer">
         {% block section_footer %}
         {% endblock %}
         </div>
+    </div>
+</section>
