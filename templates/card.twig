@@ -1,29 +1,28 @@
 
-<div class="card {{ card_category }}">
-    <article>
-        <!--  Optional CATEGORY component-->
-        {% if category in category == true %}
-        {% include "templates/category.twig" with {
-            category: category,
-        }%}
-        {% endif %}
-        <div class="card_wrapper">
-            <!--  Optional FIGURE component-->
-            {% if image %}
-                <figure class="figure">
-                    <img class="figure__card-image" src={{ image }} alt={{ image_title }}>
-                    <figcaption>{{ legende_image }}</figcaption>
-                </figure>
+<div class="card__wrapper">
+    <div class="card {{ card_category }}">
+        <article>
+            <!--  Optional CATEGORY component-->
+            {% if category in category == true %}
+            {% include "templates/category.twig" with {
+                category: category,
+            }%}
             {% endif %}
-            <div class="card_contain">
-                <h3 class="card__title">
-                    <a class="card__link" href="{{ card_link }}">{{ card_title }}</a>
-                </h3>
-                <!--map or loop or join-->
-                <div class="card__author">By {{name_author| join(', ')}}</div>
-                <p class="content">{{content}}</p>
-            </div>
-        </div>
-    </article>
-
+                <!--  Optional FIGURE component-->
+                {% if image %}
+                    <figure class="figure">
+                        <img class="figure__card-image" src={{ image }} alt={{ image_title }}>
+                        <figcaption>{{ legende_image }}</figcaption>
+                    </figure>
+                {% endif %}
+                <div class="card_contain">
+                    <h3 class="card__title">
+                        <a class="card__link" href="{{ card_link }}">{{ card_title_link }}</a>
+                    </h3>
+                    <!--map or loop or join-->
+                    <div class="card__author">By {{name_author| join(', ')}}</div>
+                    <p class="content">{{content}}</p>
+                </div>
+        </article>
+    </div>
 </div>

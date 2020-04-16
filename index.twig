@@ -1,20 +1,20 @@
 {% extends "templates/base.twig" %}
 {% block content %}
   <div class="container_section">
-
-    {% set cards %}
-      {% if loop.first %}
-      {% include "templates/card_large.twig" with {
-          image: spotlight_section.items.image,
-          image_title:"title image",
-          card_link: spotlight_section.items.url,
-          card_title_link: spotlight_section.items.title,
-          name_author:spotlight_section.items.authors,
-          content:spotlight_section.items.content
+  {% set cards %}
+    {% for item in spotlight_section.items %}
+    {# variable loop created automaticcaly after a for loop #}
+        {% if loop.first %}
+            {% include "templates/card_large.twig" with {
+            image: item.image,
+            image_title:"title image",
+            card_link: item.url,
+            card_title_link: item.title,
+            name_author:item.authors,
+            content:item.content
       }%}
       {% else %}
-      {% for item in spotlight_section.items %}
-        {% include "templates/card.twig" with {
+      {% include "templates/card.twig" with {
           category: item.category,
           image: item.image,
           image_title:"title image",
@@ -23,9 +23,9 @@
           name_author:item.authors,
           content:item.content
         }%}
-      {% endfor %}
       {% endif %}
-    {% endset %}
+    {% endfor %}
+  {% endset %}
 
   {% set cards__second %}
       {% for item in recent_section.items %}
@@ -39,7 +39,7 @@
           content:item.content
         }%}
       {% endfor %}
-    {% endset %}
+  {% endset %}
     {# {% embed "templates/section.twig" with {
       section_title: 'Title',
       section_link_url: 'http://google.com',
@@ -68,19 +68,21 @@
       section_link_text:recent_section.see_all.link.text,
       section_intro:recent_section.intro
     }%}
-    {% block section_content %}
-    {% include "templates/grid_second.twig" with {
-      modifier_classes: 'grid--second',
-      grid_items: cards__second
-    }%}
-    {% endblock %}
-    {% block section_footer %}
-    {% include "templates/section_footer.twig" with {
-      footer_url:recent_section.call_to_action.url,
-      footer_link_text:recent_section.call_to_action.link_text
+      {% block section_content %}
+      {% include "templates/grid_second.twig" with {
+        modifier_classes: 'grid--second',
+        grid_items: cards__second
       }%}
-    {% endblock %}
+      {% endblock %}
+
+      {% block section_footer %}
+          {% include "templates/button.twig" with {
+          button_url:recent_section.call_to_action.url,
+          button_text:recent_section.call_to_action.link_text
+          }%}
+      {% endblock %}
     {% endembed %}
+  
   </div>
 {% endblock  %}
 

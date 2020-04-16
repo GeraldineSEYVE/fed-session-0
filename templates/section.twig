@@ -9,10 +9,12 @@
         {% if section_intro %}
             <div class="section__intro">{{ section_intro }}</div>
         {% endif %}
-
+        
         {# Grid #}
-        {% block section_content %}
-            Section content will go here
-        {% endblock %}
+        <div class="grid_wrapper">
+            {% block section_content %}
+                Section content will go here
+            {% endblock %}
+        </div>
     </div>
 </section>

@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section_second">
     <div class="l-constrain">
         <header class="section__header">
             <h2 class="section__title">{{ section_title }}</h2>
@@ -10,9 +10,13 @@
         {% endif %}
 
         {#Grid #}
+        <div class="grid_second_wrapper">
         {% block section_content %}
         {% endblock %}
+        </div>
 
         {#Footer #}
+        <div class="section_footer">
         {% block section_footer %}
         {% endblock %}
+        </div>

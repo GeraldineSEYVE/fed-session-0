@@ -1,7 +1,6 @@
 
 <div class="card card__large">
     <article>
-        <div class="card__wrapper">
             {% if image %}
                 <figure class="figure">
                     <img class="figure__card-image" src={{ image }} alt={{ image_title }}>
@@ -12,10 +11,9 @@
                 <h3 class="card__title">
                     <a href="card__link" href={{ card_link }}>{{ card_title }}</a>
                 </h3>
-                <div class="card__author">By {{ name_author }}</div>
+                <div class="card__author">By {{ name_author |join(', ', ' and ') }}</div>
                 <p class="content">{{content}}</p>
             </div>
-        </div>
     </article>
 
 </div>
