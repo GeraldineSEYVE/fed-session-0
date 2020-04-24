@@ -1,0 +1,78 @@
+// colors:
+$rose-salmon: #EEE2DC;
+$red: #AC3B61;
+$darkgrey:#151515;
+$grey:#393939;
+$lightgrey: #979797;
+$blue:#123C69;
+$white:#ffffff;
+
+// font-family
+$font-family: Source Sans Pro', sans-serif';
+
+// size
+$size: 5px;
+$size_0--0:6px;
+$size_0:10px;
+$size_1: 12px;
+$size_2: 14px;
+$size-3: 16px;
+$size-4: 20px;
+$size_5: 22px;
+$size_6: 24px;
+$size_7: 26px;
+$size_8: 30px;
+$size_9: 33px;
+$size_8: 39px;
+$size_9: 44px;
+$size_10: 59px;
+$size_11: 62px;
+$size_12: 68px;
+// $size_13: 70px;
+// $size_14: 75px;
+$size_15: 71px;
+// $size_16: 85px;
+// $size_17: 90px;
+// $size_18: 95px;
+// $size_19: 100px;
+// $size_20: 105px;
+
+
+// border
+$border-top-1: 1px solid $darkgrey;
+$border-top-2: 2px solid $darkgrey;
+$border-top-3: 3px solid $darkgrey;
+
+// mixin
+@mixin background($background){
+    background-color:$background;
+}
+@mixin fontweight($fontweight){
+    font-weight:$fontweight;
+}
+@mixin h2(){
+    font-family: $font-family;
+    font-size: $size_6;
+    @include breakpoint (500px){
+        font-size:$size-2;
+    }
+}
+@mixin h3(){
+    font-size: $size_5;
+    color:$grey;
+    text-decoration:none;
+}
+@mixin category($color){
+    color:$color;
+}
+@mixin color_card{
+    color:$grey;
+}
+@mixin breakpoint($width){
+    @media only screen and (max-width:$width){
+        @content
+    }
+}
+
+
+

@@ -1,7 +1,7 @@
 {% extends "templates/base.twig" %}
 {% block content %}
   <div class="container_section">
-{# First block card//#}
+{# First block card// #}
   {% set cards %}
     {% for item in spotlight_section.items %}
     {# variable loop created automaticcaly after a for loop #}
@@ -9,7 +9,6 @@
             {% include "templates/card_large.twig" with {
             image: item.image,
             image_title:"title image",
-            card_link: item.url,
             card_title_link: item.title,
             name_author:item.authors,
             content:item.content
@@ -19,7 +18,6 @@
           category: item.category,
           image: item.image,
           image_title:"title image",
-          card_link: item.url,
           card_title_link: item.title,
           name_author:item.authors,
           content:item.content
@@ -33,10 +31,8 @@
       {% for item in recent_section.items %}
         {% include "templates/card.twig" with {
           category: item.category,
-          image: item.image,
-          image_title:"title image",
-          card_link: item.url,
           card_title_link: item.title,
+          material_icons: true,
           name_author:item.authors,
           content:item.content
         }%}
@@ -53,10 +49,9 @@
 
 {# first bloc section //#}
   {% embed "templates/section.twig" with {
-    section_title:spotlight_section.title,
-    section_link_url:spotlight_section.see_all.url,
-    section_link_text:spotlight_section.see_all.link.text,
-    modifier_classes: 'section'
+    section_title: spotlight_section.title,
+    section_link_url: spotlight_section.see_all.url,
+    section_link_text: spotlight_section.see_all.link_text,
     }%}
   {% block section_content %}
     {% include "templates/grid.twig" with {
@@ -70,7 +65,7 @@
   {% embed "templates/section_second.twig" with {
     section_title:recent_section.title,
     section_link_url:recent_section.see_all.url,
-    section_link_text:recent_section.see_all.link.text,
+    section_link_text:recent_section.see_all.link_text,
     section_intro:recent_section.intro,
     modifier_classes: 'section--second'
     }%}
@@ -90,4 +85,3 @@
 {# //deuxieme bloc section #}
   </div>
 {% endblock  %}
-

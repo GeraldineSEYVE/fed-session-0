@@ -1,0 +1,22 @@
+figure.figure {
+    margin: 0px;
+    }
+.figure__card-image{
+    width:100%;
+    }
+.card__author {
+    font-size: $size_1;
+    @include fontweight(bold);
+}
+p.content {
+    font-size: $size_2;
+}
+.section__intro {
+    font-style: italic;
+}
+h3.card__title {
+    padding-bottom: 15px;
+    @include breakpoint(500px){
+        padding-bottom: 0px;
+        }
+    }

@@ -1,18 +1,17 @@
-<section class="section {{ modifier_classes }}">
+<div class="section-first">
     <div class="l-constrain">
-        <header class="section__header">
-            <h2 class="section__title">{{ section_title }}</h2>
-            <a class="section__link" href="{{ section_link_url }}">{{ section_link_text }}</a>
+        <header class="section-first__header">
+            <h2 class="section-first__title">{{ section_title }}</h2>
+            <a class="section-first__link" href="{{ section_link_url }}">{{ section_link_text }}</a>
         </header>
-        {# Intro #}
         {% if section_intro %}
-            <div class="section__intro">{{ section_intro }}</div>
+            <div class="section-first__intro">{{ section_intro }}</div>
         {% endif %}
-        {# Grid #}
-        <div class="section__grid">
+
+        <div class="section-first__grid">
             {% block section_content %}
                 Section content will go here
             {% endblock %}
         </div>
     </div>
-</section>
+</div>

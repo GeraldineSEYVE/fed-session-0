@@ -1,0 +1,13 @@
+.category--unicorns{
+    @include category($red);
+    .category--unicorns::after{
+        border-bottom:1px solid black;
+    }
+}
+.category--bears{
+    @include category($blue);
+}
+.category{
+    text-transform: uppercase;
+    font-size: $size_0;
+}

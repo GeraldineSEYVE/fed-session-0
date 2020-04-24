@@ -1,0 +1,16 @@
+.button {
+    background-color: $blue;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;;;
+    border: 1px solid $lightgrey;
+    padding: 5px 39px 6px 44px;
+    border-radius: 8%8% 8% 8%;
+    &:hover{
+        background-color: $red;
+    }
+}
+.section__footer {
+    margin-top: $size_11;
+    text-align: center;
+}

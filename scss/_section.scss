@@ -1,0 +1,34 @@
+
+.l_constrain{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding:0 1.5rem;
+}
+// <!-- HEADER // -->
+.section-first {
+  padding:$size_9;
+  @include background($rose-salmon);
+  @include breakpoint(500px){
+    padding: 10px 10px 10px 10px;
+  }
+}
+.section-first__header {
+  border-top: $border-top-2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a{
+    color:$red;
+    font-size: $size_3;
+    text-decoration: none;
+    @include breakpoint(500px){
+    font-size: $size-2;
+  }}
+  a:hover{
+      color: $grey;
+  }
+}
+.section-first__title {
+  @include h2;
+  }
+// <!-- //HEADER-->

@@ -1,5 +1,13 @@
+@import "global";
 @import "section";
+@import "section_second";
+@import "grid";
+@import "category";
+@import "card";
+@import "grid_second";
+@import "button";
+// @import "breakpoint";
 
 body {
-  background-color: white;
+  @include background($white);
 }
