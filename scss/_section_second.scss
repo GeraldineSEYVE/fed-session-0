@@ -3,7 +3,7 @@
     margin: 0 auto;
     padding:0 1.5rem;
 }
-.section .section_second{
+section.section.section--second {
     padding:$size_9;
     @include background($white);
     @include breakpoint(500px){

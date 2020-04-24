@@ -14,9 +14,14 @@ p.content {
 .section__intro {
     font-style: italic;
 }
-h3.card__title {
+// h3.card__title {
+    
+//     }
+.grid h3.card__title {
+    @include h3();
+    @include fontweight(100);
     padding-bottom: 15px;
     @include breakpoint(500px){
         padding-bottom: 0px;
         }
-    }
+}
