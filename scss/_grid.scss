@@ -16,7 +16,14 @@
         }
 }
 
+.grid h3.card__title {
+    @include h3();
+    @include fontweight(100);
 
+}
+h3.card__title {
+    margin-top: 35px;
+}
 // .grid_first{
 //     display:flex;
 //     > * {
