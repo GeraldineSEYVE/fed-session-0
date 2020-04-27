@@ -1,4 +1,3 @@
-
 .l_constrain{
   max-width: 1200px;
   margin: 0 auto;
@@ -6,23 +5,24 @@
 }
 // <!-- HEADER // -->
 .section-first {
-  padding:$size_9;
+  padding:$size_26;
   @include background($rose-salmon);
   @include breakpoint(500px){
-    padding: 10px 10px 10px 10px;
+  padding: $size_10 $size_10 $size_10 $size_10;
   }
 }
 .section-first__header {
+  margin: 0px 0px 30px 0px;
   border-top: $border-top-2;
   display: flex;
   justify-content: space-between;
   align-items: center;
   a{
     color:$red;
-    font-size: $size_3;
+    font-size: $size_16;
     text-decoration: none;
     @include breakpoint(500px){
-    font-size: $size-2;
+    font-size: $size-14;
   }}
   a:hover{
       color: $grey;

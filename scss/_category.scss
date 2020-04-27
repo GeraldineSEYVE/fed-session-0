@@ -6,8 +6,10 @@
 }
 .category{
     text-transform: uppercase;
-    font-size: $size_0;
+    font-size: $size_10;
     }
-.cat.wrapper {
-    margin-bottom: 35px;
+.l-constrain{
+    margin-bottom: $size_0;
+    padding:0px;
+
 }

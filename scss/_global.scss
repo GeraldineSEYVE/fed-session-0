@@ -10,32 +10,39 @@ $white:#ffffff;
 // font-family
 $font-family: Source Sans Pro', sans-serif';
 
-// size
-$size: 5px;
-$size_0--0:6px;
-$size_0:10px;
-$size_1: 12px;
-$size_2: 14px;
-$size-3: 16px;
-$size-4: 20px;
-$size_5: 22px;
-$size_6: 24px;
-$size_7: 26px;
-$size_8: 30px;
-$size_9: 33px;
-$size_8: 39px;
-$size_9: 44px;
-$size_10: 59px;
-$size_11: 62px;
-$size_12: 68px;
-// $size_13: 70px;
-// $size_14: 75px;
-$size_15: 71px;
-// $size_16: 85px;
-// $size_17: 90px;
-// $size_18: 95px;
-// $size_19: 100px;
-// $size_20: 105px;
+
+$size_0: 0px;
+$size_1: 1px;
+$size_2: 2px;
+$size_3: 3px;
+$size-4: 4px;
+$size_5: 5px;
+$size_6: 6px;
+$size_7: 7px;
+$size_8: 8px;
+$size_9: 9px;
+$size_10:10px;
+$size_11: 11px;
+$size_12: 12px;
+$size_14: 14px;
+$size_15: 15px;
+$size-16: 16px;
+$size-20: 20px;
+$size_22: 22px;
+$size_24: 24px;
+$size_26: 26px;
+$size_30: 30px;
+$size_33: 33px;
+$size_39: 39px;
+$size_40: 40px;
+$size_44: 44px;
+$size_55: 55px;
+$size_59: 59px;
+$size_62: 62px;
+$size_68: 68px;
+$size_70: 70px;
+$size_71: 71px;
+$size_75: 75px;
 
 
 // border
@@ -50,13 +57,13 @@ $border-top-3: 3px solid $darkgrey;
 
 @mixin h2(){
     font-family: $font-family;
-    font-size: $size_6;
+    font-size: $size_24;
     @include breakpoint (500px){
-        font-size:$size-2;
+        font-size:$size-14;
     }
 }
 @mixin h3(){
-    font-size: $size_5;
+    font-size: $size_22;
     color:$grey;
     text-decoration:none;
 }
@@ -68,25 +75,24 @@ $border-top-3: 3px solid $darkgrey;
 }
 @mixin breakpoint($width){
     @media only screen and (max-width:$width){
-        @content
+        @content;
     }
 }
-
 @mixin top-and-bottom($color){
     color: $color;
     text-transform: uppercase;
-    font-size: $size_0;
+    font-size: $size_40;
     position: relative;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin:0px;
+    // margin-top: $size_40;
+    // margin-bottom: $size_40;
+    // margin:$size_0;
     &::before {
         content:'';
         position: absolute;
         background-color:$color;
-        width: 100%;
+        width: 80%;
         height: 1px;
-        top: 20px;
+        top: $size-20;
         left:0;
         margin:0px;
         }
@@ -95,8 +101,8 @@ $border-top-3: 3px solid $darkgrey;
         position: absolute;
         background-color: $color;
         width: 80%;
-        height: 1px;
-        bottom: 0;
-        left:55;
+        height: $size_1;
+        bottom: $size_0;
+        left:$size_55;
     }
 }

@@ -2,7 +2,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap:2rem;
-    padding-top: 40px;
+    margin:50px 0 62px 0;
     @include breakpoint(500px){
         grid-template-columns: 1fr;
     }
@@ -17,6 +17,7 @@
     @include h3();
     font-weight:bold;
 }
+
   // display:flex;
 
     // > * {
