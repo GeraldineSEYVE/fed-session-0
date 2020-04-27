@@ -1,7 +1,7 @@
 .grid_first{
     grid-template-columns: 2fr 1fr 1fr;
     display:grid;
-    grid-gap:20px;
+    grid-gap:2rem;
     > *{
         .grid_first :first-child{
             grid-column: 1/3;
@@ -16,14 +16,11 @@
         }
 }
 
-.grid h3.card__title {
+.card__title {
     @include h3();
-    @include fontweight(100);
+    font-weight:100;
+}
 
-}
-h3.card__title {
-    margin-top: 35px;
-}
 // .grid_first{
 //     display:flex;
 //     > * {

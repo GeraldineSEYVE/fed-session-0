@@ -1,7 +1,7 @@
 .grid_second{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap:1rem;
+    grid-gap:2rem;
     padding-top: 40px;
     @include breakpoint(500px){
         grid-template-columns: 1fr;
@@ -15,7 +15,7 @@
 
 .grid_second h3.card__title {
     @include h3();
-    @include fontweight(bold);
+    font-weight:bold;
 }
   // display:flex;
 

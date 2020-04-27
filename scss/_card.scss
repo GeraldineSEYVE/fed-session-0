@@ -6,7 +6,7 @@ figure.figure {
     }
 .card__author {
     font-size: $size_1;
-    @include fontweight(bold);
+    font-weight:bold;
 }
 p.content {
     font-size: $size_2;
