@@ -6,7 +6,7 @@
     {% for item in spotlight_section.items %}
     {# variable loop created automaticcaly after a for loop #}
         {% if loop.first %}
-            {% include "templates/card_large.twig" with {
+            {% include "templates/card.twig" with {
             modifier_classes: 'card--large',
             image: item.image,
             image_title:"title image",
@@ -16,6 +16,7 @@
       }%}
       {% else %}
       {% include "templates/card.twig" with {
+        modifier_classes: 'card--normal',
           category: item.category,
           image: item.image,
           image_title:"title image",
@@ -53,17 +54,18 @@
     section_title: spotlight_section.title,
     section_link_url: spotlight_section.see_all.url,
     section_link_text: spotlight_section.see_all.link_text,
+    
     }%}
   {% block section_content %}
     {% include "templates/grid.twig" with {
-      modifier_classes: 'grid',
+      modifier_classes: 'grid--spotlight',
       grid_items: cards
       }%}
   {% endblock %}
   {% endembed %}
 {# //first bloc section #}
 {# deuxieme bloc section// #}
-  {% embed "templates/section_second.twig" with {
+  {% embed "templates/section.twig" with {
     section_title:recent_section.title,
     section_link_url:recent_section.see_all.url,
     section_link_text:recent_section.see_all.link_text,
@@ -71,11 +73,11 @@
     modifier_classes: 'section--second'
     }%}
   {% block section_content %}
-    {% include "templates/grid_second.twig" with {
-      modifier_classes: 'grid--second',
+    {% include "templates/grid.twig" with {
       grid_items: cards__second
       }%}
   {% endblock %}
+
   {% block section_footer %}
     {% include "templates/button.twig" with {
       button_url:recent_section.call_to_action.url,

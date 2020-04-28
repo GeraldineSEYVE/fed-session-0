@@ -1,9 +1,7 @@
 
-<div class="card card__normal">
-    <div class="card{{ card_category }}">
-        <article>
+<div class="card {{ modifier_classes }}">
             <!--  Optional CATEGORY component-->
-            {% if category in category == true %}
+            {% if category %}
             {% include "templates/category.twig" with {
                 category: category,
             }%}
@@ -11,13 +9,13 @@
             <div class="card__items">
                 <!--  Optional FIGURE component-->
                 {% if image %}
-                    <figure class="figure">
-                        <img class="figure__card-image" src={{ image }} alt={{ image_title }}>
+                    <figure class="card__figure">
+                        <img class="card__image" src={{ image }} alt={{ image_title }}>
                         <figcaption>{{ legende_image }}</figcaption>
                     </figure>
                 {% endif %}
-                <div class="card_contain">
-                    <div class="contain_title_arrow">
+                <div class="card__contain">
+                    <div class="card__title_arrow">
                         <h3 class="card__title">{{ card_title_link }}
                             {% if material_icons == true %}
                             <span class="material-icons">call_made</span>
@@ -26,9 +24,7 @@
                     </div>
                     <!--map or loop or join-->
                     <div class="card__author">By {{name_author| join(', ')}}</div>
-                        <p class="content">{{content}}</p>
+                        <p class="card__content">{{content}}</p>
                 </div>
             </div>
-        </article>
-    </div>
 </div>
