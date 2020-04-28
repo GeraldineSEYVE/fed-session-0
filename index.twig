@@ -4,26 +4,26 @@
 {# First block card// #}
   {% set cards %}
     {% for item in spotlight_section.items %}
-    {# variable loop created automaticcaly after a for loop #}
+    {# variable loop created automaticaly after a for loop #}
         {% if loop.first %}
-            {% include "templates/card.twig" with {
-            modifier_classes: 'card--large',
-            image: item.image,
-            image_title:"title image",
-            card_title_link: item.title,
-            name_author:item.authors,
-            content:item.content
+          {% include "templates/card.twig" with {
+          modifier_classes: 'card--large',
+          image: item.image,
+          image_title:"title image",
+          card_title_link: item.title,
+          name_author:item.authors,
+          content:item.content
       }%}
       {% else %}
-      {% include "templates/card.twig" with {
-        modifier_classes: 'card--normal',
+        {% include "templates/card.twig" with {
+          modifier_classes: 'card--normal',
           category: item.category,
           image: item.image,
           image_title:"title image",
           card_title_link: item.title,
           name_author:item.authors,
           content:item.content
-        }%}
+          }%}
       {% endif %}
     {% endfor %}
   {% endset %}
