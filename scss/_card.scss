@@ -8,10 +8,12 @@ img.card__image {
 .card__author {
     font-size: $size_12;
     font-weight:bold;
+    font-family: $font-family;
 }
 p.card__content {
     font-size: $size_16;
     margin: 8px 0 8px 0;
+    font-family: $font-family;
 }
 
 //card__title:
@@ -27,6 +29,7 @@ p.card__content {
     font-weight: bold;
     font-size: $size_36;
     margin: 16px 0 16px 0;
+    font-family: $font-family;
     }
     img.card__image{
         padding-top:0px;

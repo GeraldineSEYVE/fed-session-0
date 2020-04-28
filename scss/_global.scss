@@ -33,6 +33,7 @@ $size_24: 24px;
 $size_26: 26px;
 $size_30: 30px;
 $size_33: 33px;
+$size_36: 36px;
 $size_39: 39px;
 $size_40: 40px;
 $size_44: 44px;
@@ -64,9 +65,10 @@ $border-top-3: 3px solid $darkgrey;
     }
 }
 @mixin card__title(){
+    font-family: $font-family;
     font-size: $size_22;
     color:$grey;
-    font-weight:100;
+    font-weight:400;
     margin: 16px 0 16px 0;
 }
 // @mixin category($color){
