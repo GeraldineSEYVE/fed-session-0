@@ -1,22 +1,22 @@
 <section class="section {{ modifier_classes }}">
-    <div class="l-constrain">
-        <header class="section__header">
-                <h2 class="section__title">{{ section_title }}</h2>
-                <a class="section__header-link" href="{{ section_link_url }}">{{ section_link_text }}</a>
-        </header>
-        {#Intro #}
-        {% if section_intro %}
-        <div class="section__intro">{{section_intro}}</div>
-        {% endif %}
-        {#Grid #}
-        <div class="section__content">
-        {% block section_content %}
-        {% endblock %}
-        </div>
-        {#Footer #}
-        <div class="section__footer">
-        {% block section_footer %}
-        {% endblock %}
-        </div>
+  <div class="l-constrain">
+    <header class="section__header">
+      <h2 class="section__title">{{ section_title }}</h2>
+      <a class="section__header-link" href="{{ section_link_url }}">{{ section_link_text }}</a>
+    </header>
+    {# Intro #}
+    {% if section_intro %}
+    <div class="section__intro">{{section_intro}}</div>
+    {% endif %}
+    {# Grid #}
+    <div class="section__content">
+    {% block section_content %}
+    {% endblock %}
     </div>
+    {# Footer #}
+    <div class="section__footer">
+    {% block section_footer %}
+    {% endblock %}
+    </div>
+  </div>
 </section>

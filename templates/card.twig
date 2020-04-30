@@ -1,28 +1,28 @@
 
 <div class="card {{ modifier_classes }}">
-            <!--  Optional CATEGORY component-->
-            {% if category %}
-            {% include "templates/category.twig" with {
-                category: category,
-            }%}
-            {% endif %}
-            <div class="card__items">
-                <!--  Optional FIGURE component-->
-                {% if image %}
-                    <figure class="card__figure">
-                        <img class="card__image" src={{ image }} alt={{ image_title }}>
-                        <figcaption>{{ legende_image }}</figcaption>
-                    </figure>
-                {% endif %}
-                <div class="card__contain">
-                    <h3 class="card__title">{{ card_title_link }}
-                        {% if material_icons %}
-                        <span class="material-icons">call_made</span>
-                        {% endif %}
-                    </h3>
-                    <!--map or loop or join-->
-                    <div class="card__author">By {{name_author| join(', ')}}</div>
-                        <p class="card__content">{{content}}</p>
-                </div>
-            </div>
+  <!--  Optional CATEGORY component-->
+  {% if category %}
+  {% include "templates/category.twig" with {
+      category: category,
+  }%}
+  {% endif %}
+  <div class="card__items">
+    <!--  Optional FIGURE component-->
+    {% if image %}
+      <figure class="card__figure">
+        <img class="card__image" src={{ image }} alt={{ image_title }}>
+        <figcaption>{{ legende_image }}</figcaption>
+      </figure>
+    {% endif %}
+    <div class="card__contain">
+      <h3 class="card__title">{{ card_title_link }}
+        {% if material_icons %}
+          <span class="material-icons">call_made</span>
+        {% endif %}
+      </h3>
+      <!--map or loop or join-->
+      <div class="card__author">By {{name_author| join(', ')}}</div>
+      <p class="card__content">{{content}}</p>
+    </div>
+  </div>
 </div>

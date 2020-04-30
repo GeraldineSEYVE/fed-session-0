@@ -56,60 +56,60 @@ $border-top-3: 3px solid $darkgrey;
 
 // mixin
 @mixin background($background){
-    background-color:$background;
+  background-color:$background;
 }
 @mixin breakpoint($width){
-    @media only screen and (max-width:$width){
-        @content;
-    }
+  @media only screen and (max-width:$width){
+    @content;
+  }
 }
 @mixin card__title(){
-    color:$grey;
-    font-family: $font-family2;
-    font-size: $size_22;
-    font-weight:bold;
-    margin: $size_16 $size_0 $size_16 $size_0;
-    @include breakpoint(500px){
-        font-size:$size_20;
-    }
-    @include breakpoint(1024px){
-        text-align: center;
-    }
+  color:$grey;
+  font-family: $font-family2;
+  font-size: $size_22;
+  font-weight:bold;
+  margin: $size_16 $size_0 $size_16 $size_0;
+  @include breakpoint(500px){
+    font-size:$size_20;
+  }
+  @include breakpoint(1024px){
+    text-align: center;
+  }
 }
 // @mixin category($color){
 //     color:$color;
 // }
 @mixin h2(){
-    font-family: $font-family;
-    font-size: $size_24;
-    font-weight: 600;
-    margin: $size_16 $size_0 $size_59 $size_0;
-    @include breakpoint(500px){
-        font-size:$size-14;
-    }
+  font-family: $font-family;
+  font-size: $size_24;
+  font-weight: 600;
+  margin: $size_16 $size_0 $size_59 $size_0;
+  @include breakpoint(500px){
+    font-size:$size-14;
+  }
 }
 @mixin top-and-bottom($color){
-    color: $color;
-    font-size: $size_10;
-    position: relative;
-    text-transform: uppercase;
-    &::before {
-        background-color:$color;
-        content:'';
-        height: $size_1;
-        left:$size_0;
-        margin:$size_0;
-        position: absolute;
-        top: $size-20;
-        width: 80%;
-        }
-    &::after {
-        background-color: $color;
-        bottom: $size_0;
-        content:'';
-        height: $size_1;
-        left:$size_55;
-        position: absolute;
-        width: 80%;
+  color: $color;
+  font-size: $size_10;
+  position: relative;
+  text-transform: uppercase;
+  &::before {
+    background-color:$color;
+    content:'';
+    height: $size_1;
+    left:$size_0;
+    margin:$size_0;
+    position: absolute;
+    top: $size-20;
+    width: 80%;
     }
+  &::after {
+    background-color: $color;
+    bottom: $size_0;
+    content:'';
+    height: $size_1;
+    left:$size_55;
+    position: absolute;
+    width: 80%;
+  }
 }
