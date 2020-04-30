@@ -2,28 +2,38 @@
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap:2.5rem;
-    //margin:0px 0 62px 0;
+    @include breakpoint(1024px){
+        grid-template-columns: 1fr 1fr;
+    }
     @include breakpoint(500px){
-        grid-template-columns: 1fr;
+        display:block;
     }
 }
-
-.grid--spotlight{
+.grid--spotlight {
     grid-template-columns: 2fr 1fr 1fr;
     grid-gap:2.5rem;
-        @include breakpoint(500px){
-            margin:10px;
-            grid-template-columns: 1fr 1fr;
-            & :first-child{
-                grid-column:1/3;
-            }
+    @include breakpoint(1024px){
+        margin:$size_10;
+        grid-template-columns: 1fr 1fr;
+        & :first-child{
+            grid-column:1/3;
+        }
+    }
+    @include breakpoint(500px){
+        display:block;
         }
 }
 
 
 
 
-  // display:flex;
+
+
+
+
+
+
+ //                   // GRID AVEC display:flex;
 
     // > * {
     //     flex-basis:25%;
@@ -41,52 +51,19 @@
 // }
 
 
-
-
-
-
-
 //                 // GRID AVEC @include breakpoint(){} //
 //                      + @import "breakpoint;"
 //.grid{
 //     @include breakpoint(500px){
-//         display:grid;
-//         grid-template-columns: 1fr 1fr ;
-//     }
-//     @include breakpoint(900px){
-//         grid-template-columns: 2fr 1fr 1fr;
-//     }
-//     > * {
-//         & :first-child{
-//             @include breakpoint(500px){
-//             grid-column: 1/3;
-//             }
-//         }
-//     }
+//      }
 // }
-
-// .section__grid
-//   //padding-top:$size_10;
-//   //padding-left: $size_15;
-
-//                 GRID AVEC @MEDIA QUERIES
+//                 // GRID AVEC @MEDIA QUERIES
 //   }
 // .grid_first{
 //     @media only screen and (max-width: 500px) {
-//         display:grid;
-//         grid-template-columns: 1fr 1fr;
-//     }
-//     @media only screen and (max-width: 900px){
-//         grid-template-columns: 1fr 1fr 1fr 1fr;
-//     }
-//     > *{
-//         & :first-child{
-//             @media only screen and (max-width:500px){
-//                 grid-column: 1/3;
-//             }
-//         }
 //     }
 // }
+//NE PAS OUBLIER DAPPELER DAMS style.scss //@import "breakpoint";
 
 
 

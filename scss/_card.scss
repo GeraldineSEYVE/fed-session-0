@@ -1,38 +1,70 @@
-figure.card__figure {
-    margin: 0px;
-}
-img.card__image {
-    width: 100%;
-    padding-top: 20px;
-}
-.card__author {
+
+//card--normal
+.card--normal {
+  @include breakpoint(500px){
+    padding-top: $size_50;
+  }
+  .card__author {
+    font-family: $font-family;
     font-size: $size_12;
     font-weight:bold;
-    font-family: $font-family;
-}
-p.card__content {
+    @include breakpoint(1024px){
+      text-align: center;
+    }
+  }
+  .card__content {
     font-size: $size_16;
-    margin: 8px 0 8px 0;
     font-family: $font-family;
-}
-
-//card__title:
-.section .card__title {
+    margin: $size_8 $size_0 $size_8 $size_0;
+    @include breakpoint(500px){
+      text-align: center;
+      font-size: $size_10;
+    }
+    @include breakpoint(1024px){
+      text-align: center;
+    }
+  }
+  .card__figure {
+    margin: $size_0;
+  }
+  .card__image {
+    padding-top: $size_20;
+    width: 100%;
+  }
+  .card__title {
     @include card__title();
+  }
 }
-.section--second .card__title{
-    font-weight:bold;
-    }
-// card large
+// card--large
 .card--large {
-    .card__title {
-    font-weight: bold;
+  .card__author{
+    font-weight:bold;
+    @include breakpoint(1024px){
+      text-align: center;
+      }
+  }
+  .card__content{
+    font-size: $size_14;
+    @include breakpoint(1024px){
+      text-align: center;
+      }
+  }
+  .card__figure {
+    margin: $size_0;
+  }
+  .card__image{
+    padding-top:$size_0;
+    width: 100%;
+  }
+  .card__title {
     font-size: $size_36;
-    margin: 16px 0 16px 0;
+    margin: $size_16 $size_0 $size_16 $size_0;
     font-family: $font-family;
+    @include breakpoint(500px){
+      font-size:$size_20;
     }
-    img.card__image{
-        padding-top:0px;
+    @include breakpoint(1024px){
+    text-align: center;
     }
-
+  }
 }

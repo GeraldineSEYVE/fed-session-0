@@ -4,45 +4,46 @@
 .section {
   padding:$size_26;
   @include background($rose-salmon);
-  @include breakpoint(500px){
-  padding: $size_10 $size_10 $size_10 $size_10;
-  }
 }
-section.section.section--second {
-  background-color: white;
+.section--second {
+  @include background($white);
 }
 // <!-- HEADER // -->
 .section__title {
   @include h2;
   }
-
 .section__header {
-  // margin: 0px 0px 30px 0px;
+  align-items: center;
   border-top: $border-top-2;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   a{
-    margin: 16px 0 59 0;
     color:$red;
     font-size: $size_16;
+    margin: $size_16 $size_0 $size_59 $size_0;
     text-decoration: none;
     @include breakpoint(500px){
     font-size: $size-14;
-  }}
+    }
+  }
   a:hover{
-      color: $grey;
+    color: $grey;
   }
 }
 .section__intro {
   font-family: $font-family;
   font-style: italic;
-  font-size: 16px;
-  padding-bottom: 50px;
+  font-size: $size_16;
+  padding-bottom: $size_50;
+  @include breakpoint(500px){
+    font-size: $size_9;
+    padding-bottom: $size_25;
+  }
 }
-// // <!-- //HEADER-->
+//<!-- //HEADER-->
+//<!-- FOOTER //->
 .section__footer {
+  margin-top: $size_62;
   text-align: center;
-  margin-top: 62px;
 }
-
+//<!-- FOOTER//->

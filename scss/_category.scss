@@ -1,11 +1,6 @@
+.category--bears{
+    @include top-and-bottom($blue);
+    }
 .category--unicorns{
     @include top-and-bottom($red);
     }
-.category--bears{
-    @include top-and-bottom($blue);
-}
-.category{
-    text-transform: uppercase;
-    font-size: $size_10;
-    }
-

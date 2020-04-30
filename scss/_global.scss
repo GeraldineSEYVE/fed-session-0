@@ -1,15 +1,15 @@
 // colors:
-$rose-salmon: #EEE2DC;
-$red: #AC3B61;
+$blue:#123C69;
 $darkgrey:#151515;
 $grey:#393939;
 $lightgrey: #979797;
-$blue:#123C69;
+$red: #AC3B61;
+$rose-salmon: #EEE2DC;
 $white:#ffffff;
 
 // font-family
 $font-family: 'Source Sans Pro', sans-serif;
-
+$font-family2: "Merriweather";
 
 $size_0: 0px;
 $size_1: 1px;
@@ -21,7 +21,7 @@ $size_6: 6px;
 $size_7: 7px;
 $size_8: 8px;
 $size_9: 9px;
-$size_10:10px;
+$size_10: 10px;
 $size_11: 11px;
 $size_12: 12px;
 $size_14: 14px;
@@ -30,13 +30,16 @@ $size-16: 16px;
 $size-20: 20px;
 $size_22: 22px;
 $size_24: 24px;
+$size_25: 25px;
 $size_26: 26px;
+$size_28: 28px;
 $size_30: 30px;
 $size_33: 33px;
 $size_36: 36px;
 $size_39: 39px;
 $size_40: 40px;
 $size_44: 44px;
+$size_50: 50px;
 $size_55: 55px;
 $size_59: 59px;
 $size_62: 62px;
@@ -55,55 +58,58 @@ $border-top-3: 3px solid $darkgrey;
 @mixin background($background){
     background-color:$background;
 }
-@mixin h2(){
-    font-family: $font-family;
-    font-size: $size_24;
-    font-weight: 600;
-    margin: 16px 0 59 0;
-    @include breakpoint (500px){
-        font-size:$size-14;
-    }
-}
-@mixin card__title(){
-    font-family: $font-family;
-    font-size: $size_22;
-    color:$grey;
-    font-weight:400;
-    margin: 16px 0 16px 0;
-}
-// @mixin category($color){
-//     color:$color;
-// }
-// @mixin color_card{
-//     color: $grey;
-// }
 @mixin breakpoint($width){
     @media only screen and (max-width:$width){
         @content;
     }
 }
+@mixin card__title(){
+    color:$grey;
+    font-family: $font-family2;
+    font-size: $size_22;
+    font-weight:bold;
+    margin: $size_16 $size_0 $size_16 $size_0;
+    @include breakpoint(500px){
+        font-size:$size_20;
+    }
+    @include breakpoint(1024px){
+        text-align: center;
+    }
+}
+// @mixin category($color){
+//     color:$color;
+// }
+@mixin h2(){
+    font-family: $font-family;
+    font-size: $size_24;
+    font-weight: 600;
+    margin: $size_16 $size_0 $size_59 $size_0;
+    @include breakpoint(500px){
+        font-size:$size-14;
+    }
+}
 @mixin top-and-bottom($color){
     color: $color;
-    text-transform: uppercase;
-    font-size: $size_40;
+    font-size: $size_10;
     position: relative;
+    text-transform: uppercase;
     &::before {
-        content:'';
-        position: absolute;
         background-color:$color;
-        width: 80%;
-        height: 1px;
+        content:'';
+        height: $size_1;
+        left:$size_0;
+        margin:$size_0;
+        position: absolute;
         top: $size-20;
-        left:0;
-        margin:0px;
+        width: 80%;
         }
     &::after {
-        content:'';
-        position: absolute;
         background-color: $color;
-        width: 80%;
-        height: $size_1;
         bottom: $size_0;
+        content:'';
+        height: $size_1;
         left:$size_55;
+        position: absolute;
+        width: 80%;
     }
 }

@@ -15,13 +15,11 @@
                     </figure>
                 {% endif %}
                 <div class="card__contain">
-                    <div class="card__title_arrow">
-                        <h3 class="card__title">{{ card_title_link }}
-                            {% if material_icons == true %}
-                            <span class="material-icons">call_made</span>
-                            {% endif %}
-                        </h3>
-                    </div>
+                    <h3 class="card__title">{{ card_title_link }}
+                        {% if material_icons %}
+                        <span class="material-icons">call_made</span>
+                        {% endif %}
+                    </h3>
                     <!--map or loop or join-->
                     <div class="card__author">By {{name_author| join(', ')}}</div>
                         <p class="card__content">{{content}}</p>
